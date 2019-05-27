@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import PartsList from './PartsList/PartsList'
+import SelectedList from './SelectedList/SelectedList'
 
 class App extends Component {
   constructor(props){
@@ -71,8 +73,8 @@ class App extends Component {
                 { options }
               </ul>
             </div>
-          });      
-
+          });
+    console.log(features);
     return (
       <div className="App">
         <header>
@@ -81,10 +83,12 @@ class App extends Component {
           <h5>Customize your laptop</h5>  
         </header>      
         <main>
+          {/*<PartsList features={this.props.features}/>*/}
           <section className="main__form">
             <h3>TECH SPECS AND CUSTOMIZATIONS</h3>
             { features }
           </section>
+          {/*<SelectedList />*/}
           <section className="main__summary">
             <h3>NEW GREENLEAF 2018</h3>
             {summary}
@@ -95,11 +99,18 @@ class App extends Component {
                   .format(total) }
               </div>
             </div>
-          </section>
+        </section>
         </main>
       </div>
     );
   }
 }
 
-export default App;  
+export default App;
+
+//Components
+//App =>
+//    PartsList =>
+//        PartsListItem
+//    SelectedList =>
+//        SelectedListItem
